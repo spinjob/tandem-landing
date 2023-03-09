@@ -72,7 +72,7 @@ function HeaderAction({ links }) {
   
     return (
       <Header height={HEADER_HEIGHT} sx={{ borderBottom: 0 }} >
-        <div className={classes.inner} style={{padding: 40}} fluid>
+        <div className={classes.inner} style={{padding: 40}}>
           <Group>
             <Anchor>
               <Text sx={{

@@ -1,0 +1,101 @@
+
+  @font-face {
+    font-family: 'visuelt-medium-pro';
+    src: url('../../public/fonts/visuelt/visuelt-medium-pro.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'apercu-thin-pro';
+    src: url('../../public/fonts/apercu/apercu-thin-pro.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'apercu-medium-pro';
+    src: url('../../public/fonts/apercu/apercu-medium-pro.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'apercu-bold-pro';
+    src: url('../../public/fonts/apercu/apercu-bold-pro.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+    @font-face {
+    font-family: 'apercu-regular-pro';
+    src: url('../../public/fonts/apercu/apercu-regular-pro.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'apercu-black-pro';
+    src: url('../../public/fonts/apercu/apercu-black-pro.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'apercu-light-pro';
+    src: url('../../public/fonts/apercu/apercu-light-pro.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  
+  @font-face {
+    font-family: 'vulf-sans-regular';
+    src: url('../../public/fonts/Vulf Sans/Vulf_Sans-Regular.woff2') format('woff2');
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'vulf-sans-medium';
+    src: url('../../public/fonts/Vulf Sans/Vulf_Sans-Medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'vulf-sans-light';
+    src: url('../../public/fonts/Vulf Sans/Vulf_Sans-Light.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'vulf-sans-bold';
+    src: url('../../public/fonts/Vulf Sans/Vulf_Sans-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'vulf-sans-black';
+    src: url('../../public/fonts/Vulf Sans/Vulf_Sans-Black.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'visuelt-medium';
+    src: url('../../public/fonts/visuelt/visuelt-medium-pro.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'visuelt-regular';
+    src: url('../../public/fonts/visuelt/visuelt-regular-pro.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  
+  
