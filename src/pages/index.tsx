@@ -17,6 +17,8 @@ import levelUpAnimationB from '../../public/animations/LevelUp_Icons_B_GearSwitc
 import levelUpAnimationC from '../../public/animations/LevelUp_Icons_C_Accordion.json'
 import levelUpAnimationD from '../../public/animations/LevelUp_Icons_D_Arrow.json'
 
+import mobileSectionVector from '../../public/Mobile-Section-1-Drawing.svg'
+
 import SchemaAnimation from '../../public/animations/ValueProp_Section1.json'
 import WorkflowAnimation from '../../public/animations/ValueProp_Section2.json'
 import FormulaAnimation from '../../public/animations/ValueProp_Section3.json'
@@ -52,66 +54,28 @@ const useStyles = createStyles((theme) => ({
 		},
 		cursor: 'pointer'
 	},
+	hiddenMobileSmall:{
+		[theme.fn.smallerThan('sm')]: {
+			display: 'none',
+		},
+	},
+	hiddenMobileMedium:{
+		[theme.fn.smallerThan('md')]: {
+			display: 'none',
+		},
+	},
+	hiddenDesktop:{
+		[theme.fn.largerThan('sm')]: {
+			display: 'none',
+		},
+	},
   }));
 
 
 export default function Home() {
 
   const [selectedHowItWorks, setSelectedHowItWorks] = useState('a')
-  const { classes, cx } = useStyles();
-
-  const testData = [
-	  {
-			"link": "/about",
-			"label": "Features"
-		},
-		{
-			"link": "#1",
-			"label": "Learn",
-			"links": [{
-					"link": "/docs",
-					"label": "Documentation"
-				},
-				{
-					"link": "/resources",
-					"label": "Resources"
-				},
-				{
-					"link": "/community",
-					"label": "Community"
-				},
-				{
-					"link": "/blog",
-					"label": "Blog"
-				}
-			]
-		},
-		{
-			"link": "/about",
-			"label": "About"
-		},
-		{
-			"link": "/pricing",
-			"label": "Pricing"
-		},
-		{
-			"link": "#2",
-			"label": "Support",
-			"links": [{
-					"link": "/faq",
-					"label": "FAQ"
-				},
-				{
-					"link": "/demo",
-					"label": "Book a demo"
-				},
-				{
-					"link": "/forums",
-					"label": "Forums"
-				}
-			]
-		}
-	]
+  const { classes, cx, theme } = useStyles();
 
   const howItWorksData = [
 		{
@@ -187,7 +151,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <HeaderAction links={testData} />
+      <HeaderAction />
 	  <div
 	  	style={{
 			height: '700px',
@@ -201,16 +165,15 @@ export default function Home() {
 			position: 'relative',
 		}}
 	  >
-		<div
+		<div 
+			className={cx(classes.hiddenMobileMedium)}
 			style={{
-				display: 'flex',
-				flexDirection: 'row',
-				width:'30%',
-				height: '100%',
-				alignItems:'flex-start',
-		
-			}}
-		>
+					flexDirection: 'row',
+					width:'30%',
+					height: '100%',
+					alignItems:'flex-start',
+				}}
+			>
 			<Player
 				autoplay
 				loop
@@ -219,7 +182,7 @@ export default function Home() {
 			/>
 		</div>
 		<div 
-		style={{display: 'flex',flexDirection: 'column',alignItems: 'center',justifyContent: 'center',height: '100%',width:'40%'}}>
+			style={{display: 'flex',flexDirection: 'column',alignItems: 'center',justifyContent: 'center',height: '100%',width:'40%'}}>
 				<div style={{display: 'flex', flexDirection: 'row',backgroundColor: '#D9FAC0', width: '500px', height: '110px', borderRadius: 10,alignContent: 'center', alignItems: 'center', justifyContent:'center'}}>
 					<Text sx={{marginTop: -20,fontSize: '96px',fontFamily: 'vulf-sans-bold'}}>
 						Integrate
@@ -271,8 +234,8 @@ export default function Home() {
 				</Button>
 		</div>
 		<div
+			className={cx(classes.hiddenMobileMedium)}
 			style={{
-				display: 'flex',
 				flexDirection: 'row',
 				width:'30%',
 				height: '100%',
@@ -289,7 +252,13 @@ export default function Home() {
 			/>
 		</div>
 	  </div>
-      
+	  <div 
+	  	className={cx(classes.hiddenDesktop)} 
+	    style={{ width: '100%'}} >
+		<Image alt="mobileBanner" src={mobileSectionVector} />
+		<div style={{height: '40px'}} />
+	  </div>
+
 	  <div style={{
 		  display: 'flex',
 		  flexDirection: 'column',
@@ -299,12 +268,14 @@ export default function Home() {
 		  position: 'relative',
 
 	  }}>
-		<div style={{height: '69px', width: '256px'}} >
-			<Player
-				autoplay
-				loop
-				src={sliderAnimation}
-			/>
+		<div
+			className={cx(classes.hiddenMobileSmall)}
+			style={{height: '69px', width: '256px'}} >
+				<Player
+					autoplay
+					loop
+					src={sliderAnimation}
+				/>
 		</div>
 		<div style={{height: '40px'}} />
 		  <Text	
@@ -312,7 +283,7 @@ export default function Home() {
 				fontSize: '62px',
 				fontFamily:'vulf-sans-bold',
 				lineHeight: '64px',
-				width: '1000px',
+				width: '80%',
 				textAlign: 'center',
 			}}
 			>
@@ -323,14 +294,25 @@ export default function Home() {
 		sx={{
 			fontSize: '22px',
 			fontWeight: 400,
-			width: '700px',
+			width: '80%',
+			maxWidth: '800px',
 			fontFamily: 'visuelt-regular',
 			textAlign: 'center',
 		}}>
 			Tandem unblocks teams working on software partnerships between organizations.  PMs, engineers, and account managers can scope and launch integrations with speed, clarity, and efficiency.
 		</Text>
+		<div style={{height: '40px'}} />
+		<div
+			className={cx(classes.hiddenDesktop)}
+			style={{height: '69px', width: '256px'}} >
+				<Player
+					autoplay
+					loop
+					src={sliderAnimation}
+				/>
+		</div>
 	  </div>
-	  <div style={{ padding: 100, height: '721px', display:'flex', flexDirection: 'column', width: '100vw'}}>
+	  <div className={cx(classes.hiddenMobileMedium)} style={{ padding: 100, height: '721px', flexDirection: 'column', width: '100vw'}}>
 		<div style={{
 			display: 'flex',
 			flexDirection: 'row',
@@ -613,7 +595,7 @@ export default function Home() {
 		</div>
 
 	  </div>
-	<div 
+	{/* <div 
 		style={{
 			height: '685px',
 			width: '100vw',
@@ -705,8 +687,8 @@ export default function Home() {
 
 		</div>
 
-	</div>
-	<div 
+	</div> */}
+	{/* <div 
 		style={{
 			height: '685px',
 			width: '100%',
@@ -809,7 +791,7 @@ export default function Home() {
 
 				/>
 		</div>
-	</div>
+	</div> */}
 
     </div>
   )
