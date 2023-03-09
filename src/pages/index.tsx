@@ -1,4 +1,5 @@
-import { Container, Text, Button, BackgroundImage, Card, SimpleGrid, SegmentedControl, Image, createStyles} from '@mantine/core'
+import { Container, Text, Button, Card, SimpleGrid, SegmentedControl, Image, createStyles} from '@mantine/core'
+import { Carousel } from '@mantine/carousel'
 import Head from 'next/head'
 import HeaderAction from '../components/header'
 import purpleSlider from '../../public/landing-page-purple-slider.svg'
@@ -58,16 +59,19 @@ const useStyles = createStyles((theme) => ({
 		[theme.fn.smallerThan('sm')]: {
 			display: 'none',
 		},
+		display:'flex'
 	},
 	hiddenMobileMedium:{
 		[theme.fn.smallerThan('md')]: {
 			display: 'none',
 		},
+		display:'flex'
 	},
 	hiddenDesktop:{
 		[theme.fn.largerThan('sm')]: {
 			display: 'none',
 		},
+		display:'flex'
 	},
   }));
 
@@ -152,8 +156,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HeaderAction />
-	  <div
-	  	style={{
+	  <div style={{
 			height: '700px',
 			width: '100vw',
 			display: 'flex',
@@ -182,7 +185,8 @@ export default function Home() {
 			/>
 		</div>
 		<div 
-			style={{display: 'flex',flexDirection: 'column',alignItems: 'center',justifyContent: 'center',height: '100%',width:'40%'}}>
+			className={cx(classes.hiddenMobileSmall)}
+			style={{flexDirection: 'column',alignItems: 'center',justifyContent: 'center',height: '100%',width:'40%'}}>
 				<div style={{display: 'flex', flexDirection: 'row',backgroundColor: '#D9FAC0', width: '500px', height: '110px', borderRadius: 10,alignContent: 'center', alignItems: 'center', justifyContent:'center'}}>
 					<Text sx={{marginTop: -20,fontSize: '96px',fontFamily: 'vulf-sans-bold'}}>
 						Integrate
@@ -233,6 +237,84 @@ export default function Home() {
 					Get Started
 				</Button>
 		</div>
+
+		{/* Mobile Hero Section */}
+		<div className={cx(classes.hiddenDesktop)} style={{flexDirection: 'column',alignItems: 'center',justifyContent: 'center', marginTop: -150}}>
+				<div style={{display: 'flex', flexDirection: 'row',backgroundColor: '#D9FAC0', borderRadius: 10,alignContent: 'center', alignItems: 'center', justifyContent:'center'}}>
+					<Text sx={{marginTop: -20,fontSize: '66px',fontFamily: 'vulf-sans-bold'}}>
+						Integrate
+					</Text>
+				</div>
+				<Text sx={{fontSize: '66px',fontFamily: 'vulf-sans-bold',lineHeight: '80px',textAlign: 'center'}}>
+					in tandem
+				</Text>
+				<div style={{
+					height: '20px',
+				}}
+				/>
+				<Text
+					sx={{
+						fontSize: '20px',
+						fontWeight: 100,
+						lineHeight: '32px',
+						textAlign: 'center',
+						fontFamily: 'visuelt-regular',
+						color: '#3E3E3E'
+					}}
+
+				>
+					Turn your partnership API documentation into a simple, powerful, no-code workspace.
+				</Text>
+				<div style={{
+					height: '40px'
+				}}
+				/>
+				<Button
+					sx={{
+						width: '90%', 
+						height: '60px',
+						fontFamily: 'visuelt-regular',
+						fontSize: '24px',
+						fontWeight: 400,
+						backgroundColor: 'black',
+						borderRadius: 10,
+						color: 'white',
+						'&:hover': {
+							backgroundColor: '#3E3E3E',
+							color: 'white',
+						},
+
+					}}
+					radius="lg"
+				>
+					Get Started
+				</Button>
+				<div style={{
+					height: '10px'
+				}}
+				/>
+				<Button
+					sx={{
+						width: '90%', 
+						height: '60px',
+						fontFamily: 'visuelt-regular',
+						fontSize: '24px',
+						fontWeight: 400,
+						backgroundColor: 'white',
+						borderRadius: 10,
+						color: 'black',
+						border: '2px solid black',
+						'&:hover': {
+							backgroundColor: '#3E3E3E',
+							color: 'white',
+						},
+
+					}}
+					radius="lg"
+				>
+					Pricing
+				</Button>
+		</div>
 		<div
 			className={cx(classes.hiddenMobileMedium)}
 			style={{
@@ -254,7 +336,7 @@ export default function Home() {
 	  </div>
 	  <div 
 	  	className={cx(classes.hiddenDesktop)} 
-	    style={{ width: '100%'}} >
+	    style={{ width: '100%', marginTop: -100, paddingBottom: 100}} >
 		<Image alt="mobileBanner" src={mobileSectionVector} />
 		<div style={{height: '40px'}} />
 	  </div>
@@ -278,32 +360,59 @@ export default function Home() {
 				/>
 		</div>
 		<div style={{height: '40px'}} />
-		  <Text	
+		<div className={cx(classes.hiddenMobileSmall)} style={{flexDirection: 'column', justifyContent:'center', alignItems:'center'}}>
+			<Text	
 			sx={{
 				fontSize: '62px',
 				fontFamily:'vulf-sans-bold',
 				lineHeight: '64px',
 				width: '80%',
 				textAlign: 'center',
+				paddingBottom: 50,
 			}}
 			>
 			Move fast and launch things
-		</Text>
-		<div style={{height: '40px'}} />
-		<Text
-		sx={{
-			fontSize: '22px',
-			fontWeight: 400,
-			width: '80%',
-			maxWidth: '800px',
-			fontFamily: 'visuelt-regular',
-			textAlign: 'center',
-		}}>
-			Tandem unblocks teams working on software partnerships between organizations.  PMs, engineers, and account managers can scope and launch integrations with speed, clarity, and efficiency.
-		</Text>
-		<div style={{height: '40px'}} />
-		<div
-			className={cx(classes.hiddenDesktop)}
+			</Text>
+			<Text
+			sx={{
+				fontSize: '22px',
+				fontWeight: 400,
+				width: '80%',
+				maxWidth: '800px',
+				fontFamily: 'visuelt-regular',
+				textAlign: 'center',
+				paddingBottom: 30
+			}}>
+				Tandem unblocks teams working on software partnerships between organizations.  PMs, engineers, and account managers can scope and launch integrations with speed, clarity, and efficiency.
+			</Text>
+		</div>
+		<div className={cx(classes.hiddenDesktop)} style={{flexDirection: 'column', justifyContent: 'center', alignItems:'center'}}>
+			<Text	
+			sx={{
+				fontSize: '45px',
+				fontFamily:'vulf-sans-bold',
+				lineHeight: '64px',
+				width: '80%',
+				textAlign: 'center',
+				paddingBottom: 20,
+			}}
+			>
+			Move fast and launch things
+			</Text>
+			<Text
+			sx={{
+				fontSize: '18px',
+				fontWeight: 400,
+				width: '80%',
+				maxWidth: '800px',
+				fontFamily: 'visuelt-regular',
+				textAlign: 'center',
+				paddingBottom: 30
+			}}>
+				Tandem unblocks teams working on software partnerships between organizations.  PMs, engineers, and account managers can scope and launch integrations with speed, clarity, and efficiency.
+			</Text>
+		</div>
+		<div className={cx(classes.hiddenDesktop)}
 			style={{height: '69px', width: '256px'}} >
 				<Player
 					autoplay
@@ -502,16 +611,109 @@ export default function Home() {
 			</div>
 		</div>
 	  </div>
-	  <div
-	  	style={{
-			height: '1190px',
-			width: '100vw',
-			display: 'flex',
-			flexDirection: 'column',
-			alignItems: 'center',
-			justifyContent: 'center',
 
-		}}
+	{/* Mobile How it Works Carousel */}
+	<div className={cx(classes.hiddenDesktop)} style={{ paddingTop: 150, flexDirection: 'column', width: '100%'}}>
+		<Text sx={{ fontSize: '45px', fontWeight: 700, lineHeight: '64px', textAlign: 'left', fontFamily: 'vulf-sans-bold',paddingLeft: 20}}>
+			How it works
+		</Text>
+		<div style={{height: '40px'}} />
+		<Carousel withControls={false} slideSize="85%" slideGap={10}  align='center'
+			onSlideChange={(index) => {
+				setSelectedHowItWorks(howItWorksData[index].id)
+			}}
+		>
+			{
+				howItWorksData.map((item) => {
+					return(
+						<Carousel.Slide key={item.id}>
+							<div style={{display:'flex',flexDirection: 'row'}}>
+								<div style={{width: 5}}/>
+								<div style={{
+										display: 'flex',
+										flexDirection: 'row',
+										backgroundColor: selectedHowItWorks === item.id ? '#D9FAC0' : '#F2FFE4',
+										border: '1px solid #000000',
+										height: 100,
+										paddingLeft: 10,
+										paddingRight: 10,
+										alignItems: 'center',
+										borderRadius: 10,
+										width: '100%'
+									
+									}}
+								>
+									<Text
+										sx={{
+											fontSize: '22px',
+											fontFamily: 'vulf-sans-bold',
+											fontColor: selectedHowItWorks === item.id ? '#000000' : '#3E3E3E'
+									   }}
+									>
+										{item.label}
+									</Text>
+									
+								</div>
+							</div>
+							
+						</Carousel.Slide>
+					)
+			})
+			}
+		</Carousel>
+		<div style={{ display: 'flex', padding: 20, alignItems: 'center', justifyContent: 'center'}}>
+			<Card radius={'lg'} sx={{ border: '1px solid #000000'}}>
+				<Card.Section sx={{
+					backgroundColor:'#D9FAC0',
+					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'space-between',
+					height: '40px',
+				}}>
+					<div
+						style={{width: '90%'}}
+					>
+					</div>
+					<div
+					style={{width: '10%', display: 'flex', flexDirection:'row'}}
+					>
+					<Image 
+						alt="down arrow"
+						src={downArrowIcon}
+						/>
+					
+					<Image 
+						alt="vertical dots"
+						src={verticalDots}
+						/>
+						</div>
+				</Card.Section>
+				<Card.Section
+					sx={{
+						padding: 20
+					}}
+				>
+						<Text
+							sx={{
+								fontSize: '16px', 
+								fontFamily: 'apercu-regular-pro',
+								textAlign:'left',
+								justifyContent: 'left',
+								lineHeight: '24px',
+								fontWeight: 400,
+								color: '#000000'
+							}}
+						>{
+							howItWorksData.filter((item) => {
+								return item.id === selectedHowItWorks
+							})[0].content
+						}</Text>
+				</Card.Section>
+			</Card>
+		</div>
+	</div>
+
+	  <div className={cx(classes.hiddenMobileMedium)} style={{height: '1190px',width: '100vw',flexDirection: 'column',alignItems: 'center',justifyContent: 'center',}}
 	  >	
 	  	<Text
 			sx={{
@@ -594,6 +796,74 @@ export default function Home() {
 			</SimpleGrid>
 		</div>
 
+	  </div>
+	  {/* Mobile Level Up Carousel */}
+	  <div className={cx(classes.hiddenDesktop)} style={{ paddingTop: 100, flexDirection: 'column', width: '100%'}}>
+	  	<Text sx={{ fontSize: '45px', fontWeight: 700, lineHeight: '64px', textAlign: 'left', fontFamily: 'vulf-sans-bold',paddingLeft: 20}}>
+			Level up your integrations program
+		</Text>
+		<div style={{height: '46px'}} />
+		<Carousel withIndicators withControls={false} slideSize="90%" slideGap={10}  align='center'>
+			{
+				levelUpData.map((item) => {
+					return (
+						<Carousel.Slide key={item.id}>
+							<div style={{display:'flex', flexDirection: 'row'}}>
+								<div 
+									style={{
+										display: 'block',
+										backgroundColor: item.color,
+										border: '1px solid #000000',
+										paddingLeft: 10,
+										paddingRight: 10,
+										paddingBottom: 20,
+										borderRadius: 10,
+										height: '380px',
+									
+									}}>
+										<div style={{display:'flex', flexDirection:'row'}}>
+											<Player
+												autoplay
+												loop
+												src={item.animation}
+												style={{
+													width: '150px',
+													height: '100%',
+												}}
+											/>
+											<div style={{width: '50%'}} />
+										</div>
+										
+										<Text
+											sx={{
+												fontFamily:'vulf-sans-bold',
+												fontSize: '26px',
+												paddingRight: 20,
+												paddingLeft: 20,
+												lineHeight: '30px',
+											}}
+										>
+											{item.label}
+										</Text>
+										<Text
+											sx={{
+												fontFamily:'visuelt-regular',
+												fontSize: '14px',
+												paddingTop: 10,
+												paddingRight: 20,
+												paddingLeft: 20,
+											}}
+										>
+											{item.content}
+										</Text>
+
+									</div>
+							</div>
+						</Carousel.Slide>
+					)
+				})
+			}
+		</Carousel>
 	  </div>
 	{/* <div 
 		style={{
