@@ -59,7 +59,7 @@ const useStyles = createStyles((theme) => ({
 		cursor: 'pointer'
 	},
 	hiddenMobileSmall:{
-		[theme.fn.smallerThan('sm')]: {
+		[theme.fn.smallerThan('md')]: {
 			display: 'none',
 		},
 		display:'flex'
@@ -71,7 +71,7 @@ const useStyles = createStyles((theme) => ({
 		display:'flex'
 	},
 	hiddenDesktop:{
-		[theme.fn.largerThan('sm')]: {
+		[theme.fn.largerThan('md')]: {
 			display: 'none',
 		},
 		display:'flex'
@@ -465,6 +465,25 @@ export default function Home() {
 			</div>
 		</div>
 
+		{/* Mobile Value Prop A */}
+		<div className={cx(classes.hiddenDesktop)} style={{flexDirection: 'column',alignItems: 'center'}}>
+			<Player autoplay loop src={SchemaAnimation} />
+			<div style={{ alignItems:'center', paddingLeft: 40, paddingRight: 40}} >
+				<Text sx={{ fontFamily: 'vulf-sans-bold', fontSize: '36px', alignItems: 'center',lineHeight: '60px'}}>
+					Built on industry 
+				</Text>
+				<div style={{ backgroundColor:'#FFBD9A', borderRadius: 10}}>
+					<Text sx={{ fontFamily: 'vulf-sans-bold', fontSize: '36px',textAlign: 'left',alignItems: 'center',lineHeight: '60px'}}>
+						API specification standards
+					</Text>
+				</div>
+				<Text sx={{ fontFamily: 'visuelt-regular', fontSize: '14px',  textAlign: 'left', alignItems: 'center',lineHeight: '32px'}} >
+					Tandem currently supports API specification imports of Open API (v2 & v3) and Postman collections. Because we provide a lot of functionality after import, we have requirements of the data we ingest before it can be used. Check if your API is compatibility here.
+				</Text>
+			</div>
+		</div>
+
+
 		<div className={cx(classes.hiddenMobileMedium)} style={{height: '685px', flexDirection: 'row', alignItems: 'center'}}>
 			<div style={{width: '50%', paddingLeft: 100}}>
 				<Text sx={{ fontFamily: 'vulf-sans-bold', fontSize: '50px', textAlign: 'left', alignItems: 'center', lineHeight: '60px', }}>
@@ -492,6 +511,23 @@ export default function Home() {
 			</div>
 		</div>
 
+		{/* Mobile Value Prop B */}
+		<div className={cx(classes.hiddenDesktop)} style={{flexDirection: 'column', alignItems: 'center'}}>
+				<Player autoplay loop src={WorkflowAnimation} />
+				<div style={{ alignItems:'center', paddingLeft: 40, paddingRight: 40}} >
+				<Text sx={{ fontFamily: 'vulf-sans-bold', fontSize: '36px', alignItems: 'center',lineHeight: '60px'}}>
+					Integrate what  
+				</Text>
+				<div style={{ backgroundColor:'#EAEAFF', borderRadius: 10}}>
+					<Text sx={{ fontFamily: 'vulf-sans-bold', fontSize: '36px',textAlign: 'left',alignItems: 'center',lineHeight: '60px'}}>
+						you want, when you want
+					</Text>
+				</div>
+				<Text sx={{ fontFamily: 'visuelt-regular', fontSize: '14px',  textAlign: 'left', alignItems: 'center',lineHeight: '32px'}} >
+						No need to wait for us to build support for integration-specific business logic. Tandem uses your API documentation to populate your workflow triggers and actions. So if your APIs support it, we can use it.			
+				</Text>
+			</div>
+		</div>
 
 		<div className={cx(classes.hiddenMobileMedium)} style={{ height: '685px',flexDirection: 'row',alignItems: 'center'}}>
 			<div style={{ width:'50%'}}>
@@ -519,7 +555,25 @@ export default function Home() {
 			</div>
 		</div>
 
-		<div style={{height: '900px', width: '100%', backgroundColor: '#9596FF', display:'flex', flexDirection:'column'}}>
+		{/* Mobile Value Prop C */}
+
+		<div className={cx(classes.hiddenDesktop)} style={{flexDirection: 'column',alignItems: 'center', paddingBottom: 100}}>
+			<Player autoplay loop src={FormulaAnimation} />
+			<div style={{ alignItems:'center', paddingLeft: 40, paddingRight: 40}} >
+				<div style={{ backgroundColor:'#D9FAC0',borderRadius: 10}}>
+					<Text sx={{ fontFamily: 'vulf-sans-bold', fontSize: '36px', textAlign: 'left',alignItems: 'center',lineHeight: '60px'}}>
+						Scale while
+					</Text>
+				</div>
+					<Text sx={{ fontFamily: 'vulf-sans-bold', fontSize: '36px',textAlign: 'left',alignItems: 'center',lineHeight: '60px'}}>
+						managing the details
+					</Text>
+				<Text sx={{ fontFamily: 'visuelt-regular', fontSize: '14px',  textAlign: 'left', alignItems: 'center',lineHeight: '32px'}} >
+					Tandem supports both partnership- and customer-specific configurations and settings, so you can manipulate or set values in your workflows at the level that you need to.
+				</Text>
+			</div>
+		</div>
+		<div className={cx(classes.hiddenMobileMedium)} style={{height: '900px', width: '100%', backgroundColor: '#9596FF', flexDirection:'column'}}>
                 <div style={{height: '85%', width: '100%',  padding: 100}}>
                     <div style={{width: '100%',display:'flex', justifyContent:'space-between', paddingBottom: 20}}>
                         <Text sx={{fontFamily:'vulf-sans-bold'}}>
@@ -550,7 +604,25 @@ export default function Home() {
                         </Text>
                     </Group>
                 </div>
-            </div>
+        </div>
+
+		{/* Mobile Footer */}
+		<div className={cx(classes.hiddenDesktop)} style={{height: '380px', width: '100%', backgroundColor: '#9596FF', flexDirection:'column'}}>
+                <div style={{height: '85%', width: '100%',  paddingLeft: 20, paddingRight: 20, paddingTop: 20}}>
+             
+                    <div style={{backgroundColor:'#B5B6FF', height: '200px', borderRadius: 20}}>
+                        
+                    </div>
+                
+                </div>
+                <div style={{height: '18%', width: '100%', backgroundColor:'#B5B6FF', display:'flex', alignItems: 'center', flexDirection:'column', justifyContent:'center', borderTopRightRadius: 90, borderTopLeftRadius: 90}}>
+                        <Image src={primaryLockupBlack} alt="Primary Lockup Black" width={100}/>
+						<div style={{height: '10px'}} />
+                        <Text sx={{fontFamily:'visuelt-regular', fontSize: '12px'}}>
+                            © 2021 Tandem Inc. All Rights Reserved.
+                        </Text>
+                </div>
+        </div>
     </div>
   )
 }
