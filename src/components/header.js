@@ -64,7 +64,7 @@ function HeaderAction() {
     const { classes, theme } = useStyles();
     const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
     return (
-      <Header className={classes.header} height={HEADER_HEIGHT} sx={{ borderBottom: 0 }} >
+      <Header className={classes.header} height={HEADER_HEIGHT} sx={{  position:'fixed'}} >
         <div className={classes.inner} style={{ display:'flex'}}>
           <Group
             className={classes.links}>
