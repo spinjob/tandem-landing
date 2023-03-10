@@ -225,7 +225,7 @@ export default function Home() {
 
 	  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '476px',position: 'relative' }}>
 		<div className={cx(classes.hiddenMobileSmall)} style={{height: '69px', width: '256px'}} >
-			<Player autoplay loop src={sliderAnimation} />
+			<Player autoplay keepLastFrame loop={false} src={sliderAnimation} />
 		</div>
 		<div style={{height: '40px'}} />
 		<div className={cx(classes.hiddenMobileSmall)} style={{flexDirection: 'column', justifyContent:'center', alignItems:'center'}}>
@@ -245,7 +245,7 @@ export default function Home() {
 			</Text>
 		</div>
 		<div className={cx(classes.hiddenDesktop)} style={{height: '69px', width: '256px'}} >
-				<Player autoplay loop src={sliderAnimation} />
+				<Player autoplay keepLastFrame loop={false} src={sliderAnimation} />
 		</div>
 	  </div>
 		<div className={cx(classes.hiddenMobileMedium)} style={{ padding: 100, height: '721px', flexDirection: 'column', width: '100vw'}}>
@@ -270,11 +270,11 @@ export default function Home() {
 				</div>
 				<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '170px', height: '200px', marginLeft:-20, marginRight: -70 }}>
 					{
-						  selectedHowItWorks === "a" ? ( <Player autoplay loop src={howItWorksLineAnimationA} style={{ marginBottom:-50 }} />) 
-						: selectedHowItWorks === "b" ? ( <Player autoplay loop src={howItWorksLineAnimationB} style={{ marginBottom:-75 }} />)
-						: selectedHowItWorks === "c" ? ( <Player autoplay loop src={howItWorksLineAnimationC} style={{ marginBottom:-100 }} />) 
-						: selectedHowItWorks === "d" ? ( <Player autoplay loop src={howItWorksLineAnimationD} style={{ marginBottom:-140 }} />) 
-						: selectedHowItWorks === "e" ? ( <Player autoplay loop src={howItWorksLineAnimationE} style={{ marginBottom:-170 }} />) 
+						  selectedHowItWorks === "a" ? ( <Player autoplay keepLastFrame loop={false} src={howItWorksLineAnimationA} style={{ marginBottom:-50 }} />) 
+						: selectedHowItWorks === "b" ? ( <Player autoplay keepLastFrame loop={false} src={howItWorksLineAnimationB} style={{ marginBottom:-75 }} />)
+						: selectedHowItWorks === "c" ? ( <Player autoplay keepLastFrame loop={false} src={howItWorksLineAnimationC} style={{ marginBottom:-100 }} />) 
+						: selectedHowItWorks === "d" ? ( <Player autoplay keepLastFrame loop={false} src={howItWorksLineAnimationD} style={{ marginBottom:-140 }} />) 
+						: selectedHowItWorks === "e" ? ( <Player autoplay keepLastFrame loop={false} src={howItWorksLineAnimationE} style={{ marginBottom:-170 }} />) 
 						: (null)
 					}
 				</div>
@@ -460,7 +460,7 @@ export default function Home() {
 				</div>
 				<div style={{height: '60px'}} />
 				<Text sx={{ fontFamily: 'visuelt-regular', fontSize: '18px', width: '650px', textAlign: 'left', alignItems: 'center',lineHeight: '32px'}} >
-					Tandem currently supports API specification imports of Open API (v2 & v3) and Postman collections. Because we provide a lot of functionality after import, we have requirements of the data we ingest before it can be used. Check if your API is compatibility here.
+					Tandem currently supports API specification imports of Open API (v2 & v3) and Postman collections. Because we provide a lot of functionality after import, we have requirements of the data we ingest before it can be used. Check if your API is compatible here.
 				</Text>
 			</div>
 		</div>
