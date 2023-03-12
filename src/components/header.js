@@ -203,6 +203,7 @@ function HeaderAction() {
                     borderRadius: 20,
                     height: 70,
                   }}
+                  href={process.env.NEXT_PUBLIC_API_BASE_URL + '/api/auth/login'}
                   label={
                     <Text sx={{
                       fontFamily: 'Visuelt',
