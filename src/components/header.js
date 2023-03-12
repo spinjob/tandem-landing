@@ -18,9 +18,9 @@ import {
   } from '@mantine/core';
   import { useDisclosure } from '@mantine/hooks';
   import primaryLockupBlack from '../../public/logos/SVG/Primary Lockup_Black.svg'
+  import axios from 'axios';
   
   const HEADER_HEIGHT = 80;
-  
   const useStyles = createStyles((theme) => ({
     inner: {
       height: HEADER_HEIGHT,
@@ -114,7 +114,9 @@ function HeaderAction() {
           </Group>
           <Group
            className={classes.links}>
-            <Anchor>
+            <Anchor
+              href={process.env.NEXT_PUBLIC_API_BASE_URL + '/api/auth/login'}
+            >
               <Text sx={{
                   fontFamily: 'Visuelt',
                   fontWeight: 500,
