@@ -1,4 +1,4 @@
-import { Text, Button, Card, Checkbox, SimpleGrid, Anchor, Group, Image, TextInput, createStyles} from '@mantine/core'
+import { Text, Button, Card, Badge, Checkbox, SimpleGrid, Anchor, Group, Image, TextInput, createStyles} from '@mantine/core'
 import { Carousel } from '@mantine/carousel'
 import { useForm } from '@mantine/form'
 import { useRouter } from 'next/router'
@@ -679,9 +679,23 @@ export default function Home() {
 		<div className={cx(classes.hiddenMobileMedium)} style={{height: '900px', width: '100%', backgroundColor: '#9596FF', flexDirection:'column'}}>
                 <div style={{height: '85%', width: '100%',  padding: 100}}>
                     <div style={{width: '100%',display:'flex', justifyContent:'space-between', paddingBottom: 20}}>
-                        <Text sx={{fontFamily:'vulf-sans-bold'}}>
-                            Supported Open API versions:
-                        </Text>
+                        <div style={{display:'flex', alignItems:'center'}}>
+							<Text sx={{fontFamily:'vulf-sans-bold'}}>
+								Supported Open API versions:
+							</Text>
+							<div style={{width: '10px'}} />
+							<Badge color={'#B5B6FF'}>
+								<Text sx={{fontFamily:'Visuelt', color:'black'}}>
+									v2.X
+								</Text>
+							</Badge>
+							<div style={{width: '10px'}} />
+							<Badge color={'#B5B6FF'}>
+								<Text sx={{fontFamily:'Visuelt', color:'black'}}>
+									v3.X
+								</Text>
+							</Badge>
+						</div>
                         <Anchor underline color={'dark'} sx={{fontFamily:'visuelt-regular'}}>
                             How do I get an API Spec?
                         </Anchor>
@@ -762,8 +776,8 @@ export default function Home() {
 										</div>
 									)
 								}
-                    <div style={{display:'flex',flexDirection:'column', justifyContent: 'center',height: '420px',width: '100%'}}>
-                        <Text sx={{width: '50%', fontFamily:'vulf-sans-bold', fontSize: '94px'}}>
+                    <div style={{display:'flex',flexDirection:'column', justifyContent: 'center',height: '380px',width: '100%'}}>
+                        <Text sx={{width: '50%', lineHeight: '120px', fontFamily:'vulf-sans-bold', fontSize: '94px'}}>
                             Check Your API Spec
                         </Text>
                     </div>
