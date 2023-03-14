@@ -238,7 +238,7 @@ export default function Home() {
 			"organizationId": temporaryOrganizationId
 		}
 	   return new Promise((resolve, reject) => {
-		 axios.post(process.env.NEXT_PUBLIC_API_BASE_URL+'/interfaces/upload', updatedFile).then((res) => {
+		 axios.post(process.env.NEXT_PUBLIC_A_BASE_URL+'/interfaces/upload', updatedFile).then((res) => {
 		   if(res.status === 200) {
 			 delay(1000).then(() => {
 				fetchJob(res.data.uuid)
@@ -700,7 +700,7 @@ export default function Home() {
 															You are good to start using Tandem!
 														</Text>
 														<div style={{height: '20px'}}/>
-														<Button onClick={()=>{router.push(process.env.NEXT_PUBLIC_API_BASE_URL + '/api/auth/login')}} radius="lg" sx={{ width: '300px', height: '50px', fontFamily: 'visuelt-regular',fontSize: '18px',fontWeight: 600,backgroundColor: 'black',borderRadius: 10,color: 'white','&:hover': {backgroundColor: '#3E3E3E',color: 'white'}}}>
+														<Button onClick={()=>{router.push(process.env.NEXT_PUBLIC_APP_BASE_URL + '/api/auth/login')}} radius="lg" sx={{ width: '300px', height: '50px', fontFamily: 'visuelt-regular',fontSize: '18px',fontWeight: 600,backgroundColor: 'black',borderRadius: 10,color: 'white','&:hover': {backgroundColor: '#3E3E3E',color: 'white'}}}>
 															Start Using Tandem
 														</Button>
 													</div>    
