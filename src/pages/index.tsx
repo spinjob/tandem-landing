@@ -1,10 +1,14 @@
-import { Container, Text, Button, Card, SimpleGrid, SegmentedControl, Anchor, Group, Image, createStyles} from '@mantine/core'
+import { Text, Button, Card, Checkbox, SimpleGrid, Anchor, Group, Image, TextInput, createStyles} from '@mantine/core'
 import { Carousel } from '@mantine/carousel'
+import { useForm } from '@mantine/form'
+import { useRouter } from 'next/router'
+import ImportApiDropzone from '../components/import-api'
 import Head from 'next/head'
 import HeaderAction from '../components/header'
+import axios from 'axios'
 import Footer from '../components/footer'
 import purpleSlider from '../../public/landing-page-purple-slider.svg'
-import {useState} from 'react'
+import {useState, useEffect, useCallback} from 'react'
 import {Player } from '@lottiefiles/react-lottie-player';
 import heroLeftAnimation from '../../public/animations/Hero_Left.json'
 import heroRightAnimation from '../../public/animations/Hero_Right.json'
@@ -27,9 +31,11 @@ import FormulaAnimation from '../../public/animations/ValueProp_Section3.json'
 
 import downArrowIcon from '../../public/icons/arrow.svg'
 import verticalDots from '../../public/icons/dots.svg'
+import {AiOutlineCheckCircle} from 'react-icons/ai'
+
 
 import primaryLockupBlack from '../../public/logos/SVG/Primary Lockup_Black.svg'
-
+import {v4 as uuidv4} from 'uuid';
 
 const useStyles = createStyles((theme) => ({
 	button: {
@@ -79,12 +85,40 @@ const useStyles = createStyles((theme) => ({
   }));
 
 
+
 export default function Home() {
 
-  const [selectedHowItWorks, setSelectedHowItWorks] = useState('a')
-  const { classes, cx, theme } = useStyles();
+	const [selectedHowItWorks, setSelectedHowItWorks] = useState('a')
+	const { classes, cx, theme } = useStyles();
+	const [uploadJob, setUploadJob] = useState<any>(null)
+	const [canValidate, setCanValidate] = useState(false)
+	const [fileJson, setFileJson] = useState(null)
+	const [isUploading, setIsUploading] = useState(false)
+	const [uploadProgress, setUploadProgress] = useState(0)
+	const router = useRouter()
 
-  const howItWorksData = [
+	const form = useForm({
+		initialValues: {
+			email: ''
+		},
+		validateInputOnChange: true,
+		validate: {
+			email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email')
+		}
+	});
+
+	const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
+
+	useEffect(() => {
+		if(form.isValid('email') == true && fileJson) {
+			setCanValidate(true)
+		} else {
+			setCanValidate(false)
+		}
+		}, [form.isValid('email'), fileJson]
+	)
+
+	const howItWorksData = [
 		{
 			'id': 'a',
 			'label': 'Powered by your documentation',
@@ -117,7 +151,7 @@ export default function Home() {
 		}
 	]
 
-  const levelUpData = [
+	const levelUpData = [
 		{
 			'id': 'a',
 			'label': 'Unlock partnership revenue',
@@ -149,6 +183,75 @@ export default function Home() {
 		},
 	]
 
+	const updateJob = (uuid : string) => {
+        axios.put(process.env.NEXT_PUBLIC_API_BASE_URL + '/jobs/' + uuid, {status: "COMPLETE"}).then((res) => {
+            var job = {...res.data, status: "COMPLETE"}
+			setUploadJob(job)
+			if(isUploading){
+				setIsUploading(false)
+			}
+			console.log(res.data)
+        }).catch((err) => {
+            console.log(err)
+        })
+    }
+
+	const updateProgress = (job: any) => {
+		var schemaProgress = job.metadata.schema.status == 'COMPLETED' ? 100 : 0
+		var actionStatus = job.metadata.actions.status == 'COMPLETED' ? 100 : 0
+		var parameterStatus = job.metadata.parameters.status == 'COMPLETED' ? 100 : 0
+		var securitySchemeStatus = job.metadata.securitySchemes.status == 'COMPLETED' ? 100 : 0
+		var webhookStatus = job.metadata.webhooks.status == 'COMPLETED' ? 100 : 0
+
+		var totalProgress = (schemaProgress + actionStatus + parameterStatus + securitySchemeStatus + webhookStatus) / 5
+
+		if(totalProgress == 100){
+			console.log("Job Complete")
+			setUploadProgress(100)
+			setIsUploading(false)
+			updateJob(job.uuid)
+		} else {
+			console.log("Job In Progress")
+			setUploadProgress(totalProgress)
+			delay(1000).then(() => {
+				fetchJob(job.uuid)
+			})
+		}
+	}
+
+	const fetchJob = useCallback((uuid: string) => {
+        axios.get(process.env.NEXT_PUBLIC_API_BASE_URL + '/jobs/' + uuid).then((res) => {
+            updateProgress(res.data)
+            setUploadJob(res.data)
+            console.log(res.data)
+        }).catch((err) => {
+            console.log(err)
+        })
+    }, [updateProgress])
+
+	async function processJsonFile (file: any, email: string) {
+		var temporaryUserId = "temp-"+email+"-"+uuidv4()
+		var temporaryOrganizationId = "temp-organization-"+uuidv4()
+		var updatedFile = {
+			"spec": file,
+			"userId": temporaryUserId,
+			"organizationId": temporaryOrganizationId
+		}
+	   return new Promise((resolve, reject) => {
+		 axios.post(process.env.NEXT_PUBLIC_API_BASE_URL+'/interfaces/upload', updatedFile).then((res) => {
+		   if(res.status === 200) {
+			 delay(1000).then(() => {
+				fetchJob(res.data.uuid)
+			 })
+			 setIsUploading(true)
+			 resolve(res.data)
+		   }
+		 }).catch((err) => {
+		   console.log(err)
+		   reject({status: 'Error',message: err})
+		 })
+	   });
+	 }
 
   return (
     <div style={{width: '100vw', height: '100vh', maxWidth: '100%'}}>
@@ -583,10 +686,82 @@ export default function Home() {
                             How do I get an API Spec?
                         </Anchor>
                     </div>
-                  
-                    <div style={{backgroundColor:'#B5B6FF', height: '200px', borderRadius: 20}}>
-                        
-                    </div>
+							{
+								uploadJob && uploadJob.status == 'COMPLETE' ? (
+									<div style={{display:'flex', flexDirection:'row', alignItems: 'center', justifyContent: 'center', backgroundColor:'#EAEAFF', padding: 20, borderRadius: 20}}>
+										<div style={{borderRadius:'20px', alignItems: 'center', justifyContent: 'center', display:'flex', flexDirection: 'row',width: '100%', height: '200px'}}>
+											<Card radius='lg' sx={{backgroundColor: 'transparent', alignItems: 'center', justifyContent: 'center', display:'flex', flexDirection: 'column', width: '100%', height: '100%'}}>
+												<Card.Section sx={{ display: 'flex',flexDirection: 'row', width:'100%', height: '100%', alignItems:'center', justifyContent:'flex-start'}}>
+													<div style={{display: 'flex', flexDirection: 'column', justifyContent:'flex-start', alignItems: 'flex-start', padding: 20}}>
+														<Text sx={{fontFamily: 'Visuelt', fontSize: '24px', fontWeight: 600}}>
+															We have successfully validated your API
+														</Text>
+														<Text sx={{fontFamily: 'Visuelt', fontSize: '18px', fontWeight: 100, color: '#3D3D3D'}}>
+															You are good to start using Tandem!
+														</Text>
+														<div style={{height: '20px'}}/>
+														<Button onClick={()=>{router.push(process.env.NEXT_PUBLIC_API_BASE_URL + '/api/auth/login')}} radius="lg" sx={{ width: '300px', height: '50px', fontFamily: 'visuelt-regular',fontSize: '18px',fontWeight: 600,backgroundColor: 'black',borderRadius: 10,color: 'white','&:hover': {backgroundColor: '#3E3E3E',color: 'white'}}}>
+															Start Using Tandem
+														</Button>
+													</div>    
+												</Card.Section>
+											</Card>
+           								</div>
+										<div style={{padding: 10, borderRadius: 8, display:'flex', flexDirection:'column',height: '150px',width: '500px', alignItems: 'flex-start', justifyContent: 'center', border: '2px solid black', backgroundColor: 'white' }}>
+											<div style={{display:'flex', flexDirection:'row', alignItems:'center', }}>
+												<AiOutlineCheckCircle style={{height: 24, width: 24, color: 'black', backgroundColor: '#A9E579', borderRadius:'60%'}}/>
+												<div style={{width: 10}}/>
+												<Text sx={{fontFamily: 'Visuelt', fontSize: '16px'}}>{uploadJob?.metadata?.schema?.count} Schemas</Text> 
+											</div>
+											<div style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
+												<AiOutlineCheckCircle style={{height: 24, width: 24, color: 'black', backgroundColor: '#A9E579', borderRadius:'60%'}}/>
+												<div style={{width: 10}}/>
+												<Text sx={{fontFamily: 'Visuelt', fontSize: '16px'}}>{uploadJob?.metadata?.actions?.count} Actions</Text> 
+											</div>
+											<div style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
+												<AiOutlineCheckCircle style={{height: 24, width: 24,color: 'black', backgroundColor: '#A9E579', borderRadius:'60%'}}/>
+												<div style={{width: 10}}/>
+												<Text sx={{fontFamily: 'Visuelt', fontSize: '16px'}}>{uploadJob?.metadata?.parameters?.count} Parameters</Text> 
+											</div>
+											<div style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
+												<AiOutlineCheckCircle style={{height: 24, width: 24, color: 'black', backgroundColor: '#A9E579', borderRadius:'60%'}}/>
+												<div style={{width: 10}}/>
+												<Text sx={{fontFamily: 'Visuelt', fontSize: '16px'}}>{uploadJob?.metadata?.webhooks?.count} Webhooks</Text> 
+											</div>
+											<div style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
+												<AiOutlineCheckCircle style={{height: 24, width: 24, color: 'black', backgroundColor: '#A9E579', borderRadius:'60%'}}/>
+												<div style={{width: 10}}/>
+												<Text sx={{fontFamily: 'Visuelt', fontSize: '16px'}}>{uploadJob?.metadata?.securitySchemes?.count} Security Schemes</Text> 
+											</div>
+										</div>
+									</div>
+								): (
+										<div style={{display:'flex', flexDirection:'row', alignContent: 'center', justifyContent: 'center', backgroundColor:'#B5B6FF', padding: 20, borderRadius: 20}}>
+											<div style={{width: '50%'}}>
+												<ImportApiDropzone isUploading={isUploading} uploadJob={uploadJob} fileJson={fileJson} setFileJson={setFileJson}/>
+											</div>
+											<div style={{width: '50%', height: '100%', display: 'flex', flexDirection: 'column'}}>
+												<div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%', height: '50%', padding: 50}}>
+													<div style={{display: 'flex', justifyContent: 'flex-start', width: '100%', paddingLeft: 60}}>
+															<TextInput sx={{width: '70%'}} label={ <Text sx={{fontFamily: 'Visuelt'}}>Drop your email for the results</Text> } placeholder="ex. email@example.com" {...form.getInputProps('email')}/>
+															<div style={{width: '20px'}} />
+															<Button onClick={()=>{
+																processJsonFile(fileJson, form.values.email).then((res)=>{
+																	setUploadJob(res)
+																})
+															}} disabled={!canValidate} sx={{marginTop: 25, backgroundColor:'black', fontFamily: 'Visuelt', fontWeight: 300, borderRadius: 8, '&:hover':{
+																backgroundColor: '#3E3E3E',
+															}}}>Validate my spec</Button>
+													</div>
+													<div style={{height: '20px'}} />
+													<div style={{display: 'flex', justifyContent: 'flex-start', width: '100%', paddingLeft: 60}}>
+														<Checkbox color="dark" label="I agree to the terms and conditions" />
+													</div>
+												</div>					
+											</div>
+										</div>
+									)
+								}
                     <div style={{display:'flex',flexDirection:'column', justifyContent: 'center',height: '420px',width: '100%'}}>
                         <Text sx={{width: '50%', fontFamily:'vulf-sans-bold', fontSize: '94px'}}>
                             Check Your API Spec

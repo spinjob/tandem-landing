@@ -14,6 +14,8 @@
     "@lottiefiles/react-lottie-player": "^3.5.2",
     "@mantine/carousel": "^5.10.5",
     "@mantine/core": "^5.10.4",
+    "@mantine/dropzone": "^5.10.4",
+    "@mantine/form": "^6.0.1",
     "@mantine/hooks": "^5.10.4",
     "@mantine/next": "^5.10.4",
     "@next/font": "13.1.6",
@@ -27,6 +29,11 @@
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "4.9.5"
+    "react-icons": "^4.8.0",
+    "typescript": "4.9.5",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/uuid": "^9.0.1"
   }
 }
