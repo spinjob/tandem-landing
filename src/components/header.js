@@ -18,6 +18,7 @@ import {
   } from '@mantine/core';
   import { useDisclosure } from '@mantine/hooks';
   import primaryLockupBlack from '../../public/logos/SVG/Primary Lockup_Black.svg'
+  import { useRouter } from 'next/router';
   import axios from 'axios';
   
   const HEADER_HEIGHT = 80;
@@ -63,12 +64,14 @@ import {
 function HeaderAction() {
     const { classes, theme } = useStyles();
     const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
+    const router = useRouter();
+
     return (
       <Header className={classes.header} height={HEADER_HEIGHT} sx={{  position:'fixed'}} >
         <div className={classes.inner} style={{ display:'flex'}}>
           <Group
             className={classes.links}>
-            <Anchor>
+            <Anchor href={'/pricing'}>
               <Text sx={{
                   fontFamily: 'Visuelt',
                   fontWeight: 500,
@@ -203,6 +206,9 @@ function HeaderAction() {
                     borderRadius: 20,
                     height: 70,
                   }}
+                  onClick={()=> {
+                    router.push(process.env.NEXT_PUBLIC_APP_BASE_URL + '/api/auth/login')
+                  }}
                   href={process.env.NEXT_PUBLIC_APP_BASE_URL + '/api/auth/login'}
                   label={
                     <Text sx={{
@@ -224,6 +230,9 @@ function HeaderAction() {
                     },
                     borderRadius: 20,
                     height: 70,
+                  }}
+                  onClick={()=> {
+                    router.push(process.env.NEXT_PUBLIC_APP_BASE_URL + '/pricing')
                   }}
                   label={
                     <Text sx={{

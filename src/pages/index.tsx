@@ -776,7 +776,7 @@ export default function Home() {
 										</div>
 									)
 								}
-                    <div style={{display:'flex',flexDirection:'column', justifyContent: 'center',height: '380px',width: '100%'}}>
+                    <div style={{display:'flex',flexDirection:'column', justifyContent: 'center',height: '38c0px',width: '100%'}}>
                         <Text sx={{width: '50%', lineHeight: '120px', fontFamily:'vulf-sans-bold', fontSize: '94px'}}>
                             Check Your API Spec
                         </Text>
@@ -797,13 +797,7 @@ export default function Home() {
 
 		{/* Mobile Footer */}
 		<div className={cx(classes.hiddenDesktop)} style={{height: '380px', width: '100%', backgroundColor: '#9596FF', flexDirection:'column'}}>
-                <div style={{height: '85%', width: '100%',  paddingLeft: 20, paddingRight: 20, paddingTop: 20}}>
              
-                    <div style={{backgroundColor:'#B5B6FF', height: '200px', borderRadius: 20}}>
-                        
-                    </div>
-                
-                </div>
                 <div style={{height: '18%', width: '100%', backgroundColor:'#B5B6FF', display:'flex', alignItems: 'center', flexDirection:'column', justifyContent:'center', borderTopRightRadius: 90, borderTopLeftRadius: 90}}>
                         <Image src={primaryLockupBlack} alt="Primary Lockup Black" width={100}/>
 						<div style={{height: '10px'}} />
