@@ -112,7 +112,9 @@ function HeaderAction() {
 
             }}
             >
-              <Image src={primaryLockupBlack} alt="Logo" />
+              <Image src={primaryLockupBlack} onClick={()=>{
+                router.push('/')
+              }} alt="Logo" sx={{cursor:'pointer'}} />
             </Container>
           </Group>
           <Group

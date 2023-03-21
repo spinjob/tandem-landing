@@ -137,7 +137,7 @@ const Pricing = () => {
         return feature?.supported ? ( 
             <div key={feature.label} style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                 <div style={{height: 20, width: 20}}>
-                    <Image src={checkIcon}/>
+                    <Image alt="checkIcon" src={checkIcon}/>
                 </div>
                 <div style={{width: 5}}/>
                 <Text className={cx(classes.supportedPricingListItem)}>
@@ -147,7 +147,7 @@ const Pricing = () => {
         ) : (
             <div  key={feature.label} style={{display:'flex', flexDirection:'row', paddingBottom: 5, opacity: '50%'}}>
                 <div style={{height: 20, width: 20}}>
-                    <Image src={closeIcon}/>
+                    <Image alt="closeIcon" src={closeIcon}/>
                 </div>
                 <div style={{width: 5}}/>
                 <Text className={cx(classes.unsupportedPricingListItem)}>
@@ -285,7 +285,7 @@ const Pricing = () => {
                             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent:'flex-start', marginLeft: -20, padding: 20}}>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20}}>
-                                        <Image src={checkIcon}/>
+                                        <Image alt="checkIcon" src={checkIcon}/>
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.supportedPricingListItem)}>
@@ -294,7 +294,7 @@ const Pricing = () => {
                                 </div>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20}}>
-                                        <Image src={checkIcon} />
+                                        <Image alt="checkIcon" src={checkIcon} />
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.supportedPricingListItem)}>
@@ -303,7 +303,7 @@ const Pricing = () => {
                                 </div>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20}}>
-                                        <Image src={checkIcon} />
+                                        <Image alt="checkIcon" src={checkIcon} />
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.supportedPricingListItem)}>
@@ -312,7 +312,7 @@ const Pricing = () => {
                                 </div>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20}}>
-                                        <Image src={checkIcon} />
+                                        <Image alt="checkIcon" src={checkIcon} />
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.supportedPricingListItem)}>
@@ -321,7 +321,7 @@ const Pricing = () => {
                                 </div>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20, opacity:'50%'}}>
-                                        <Image src={closeIcon} />
+                                        <Image alt="closeIcon" src={closeIcon} />
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.unsupportedPricingListItem)}>
@@ -330,7 +330,7 @@ const Pricing = () => {
                                 </div>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20, opacity:'50%'}}>
-                                        <Image src={closeIcon} />
+                                        <Image alt="closeIcon" src={closeIcon} />
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.unsupportedPricingListItem)}>
@@ -368,7 +368,7 @@ const Pricing = () => {
                             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent:'flex-start', padding: 20}}>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>                                
                                     <div style={{height: 20, width: 20}}>
-                                        <Image src={checkIcon}/>
+                                        <Image alt="checkIcon" src={checkIcon}/>
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.supportedPricingListItem)}>
@@ -377,7 +377,7 @@ const Pricing = () => {
                                 </div>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20}}>
-                                        <Image src={checkIcon} />
+                                        <Image alt="checkIcon" src={checkIcon} />
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.supportedPricingListItem)}>
@@ -386,7 +386,7 @@ const Pricing = () => {
                                 </div>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20}}>
-                                        <Image src={checkIcon} />
+                                        <Image alt="checkIcon" src={checkIcon} />
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.supportedPricingListItem)}>
@@ -395,7 +395,7 @@ const Pricing = () => {
                                 </div>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20}}>
-                                        <Image src={checkIcon} />
+                                        <Image alt="checkIcon" src={checkIcon} />
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.supportedPricingListItem)}>
@@ -404,7 +404,7 @@ const Pricing = () => {
                                 </div>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20}}>
-                                        <Image src={checkIcon} />
+                                        <Image alt="checkIcon" src={checkIcon} />
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.supportedPricingListItem)}>
@@ -413,7 +413,7 @@ const Pricing = () => {
                                 </div>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20, opacity:'50%'}}>
-                                        <Image src={closeIcon} />
+                                        <Image alt="closeIcon" src={closeIcon} />
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.unsupportedPricingListItem)}>
@@ -449,7 +449,7 @@ const Pricing = () => {
                             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent:'flex-start', marginLeft: -20, padding: 20}}>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20}}>
-                                        <Image src={checkIcon}/>
+                                        <Image alt="checkIcon" src={checkIcon}/>
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.supportedPricingListItem)}>
@@ -458,7 +458,7 @@ const Pricing = () => {
                                 </div>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20}}>
-                                        <Image src={checkIcon} />
+                                        <Image alt="checkIcon" src={checkIcon} />
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.supportedPricingListItem)}>
@@ -467,7 +467,7 @@ const Pricing = () => {
                                 </div>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20}}>
-                                        <Image src={checkIcon} />
+                                        <Image alt="checkIcon" src={checkIcon} />
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.supportedPricingListItem)}>
@@ -476,7 +476,7 @@ const Pricing = () => {
                                 </div>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20}}>
-                                        <Image src={checkIcon} />
+                                        <Image alt="checkIcon" src={checkIcon} />
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.supportedPricingListItem)}>
@@ -485,7 +485,7 @@ const Pricing = () => {
                                 </div>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20}}>
-                                        <Image src={checkIcon} />
+                                        <Image alt="checkIcon" src={checkIcon} />
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.supportedPricingListItem)}>
@@ -494,7 +494,7 @@ const Pricing = () => {
                                 </div>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20}}>
-                                        <Image src={checkIcon} />
+                                        <Image alt="checkIcon" src={checkIcon} />
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.supportedPricingListItem)}>
@@ -503,7 +503,7 @@ const Pricing = () => {
                                 </div>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20, opacity: '50%'}}>
-                                        <Image src={closeIcon} />
+                                        <Image alt="closeIcon" src={closeIcon} />
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.unsupportedPricingListItem)}>
@@ -538,7 +538,7 @@ const Pricing = () => {
                             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent:'flex-start', marginLeft: -20, padding: 20}}>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20}}>
-                                        <Image src={checkIcon}/>
+                                        <Image alt="checkIcon" src={checkIcon}/>
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.supportedPricingListItem)}>
@@ -547,7 +547,7 @@ const Pricing = () => {
                                 </div>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20}}>
-                                        <Image src={checkIcon} />
+                                        <Image alt="checkIcon" src={checkIcon} />
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.supportedPricingListItem)}>
@@ -556,7 +556,7 @@ const Pricing = () => {
                                 </div>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20}}>
-                                        <Image src={checkIcon} />
+                                        <Image alt="checkIcon" src={checkIcon} />
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.supportedPricingListItem)}>
@@ -565,7 +565,7 @@ const Pricing = () => {
                                 </div>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20}}>
-                                        <Image src={checkIcon} />
+                                        <Image alt="checkIcon" src={checkIcon} />
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.supportedPricingListItem)}>
@@ -574,7 +574,7 @@ const Pricing = () => {
                                 </div>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20}}>
-                                        <Image src={checkIcon} />
+                                        <Image alt="checkIcon" src={checkIcon} />
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.supportedPricingListItem)}>
@@ -583,7 +583,7 @@ const Pricing = () => {
                                 </div>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20}}>
-                                        <Image src={checkIcon} />
+                                        <Image alt="checkIcon" src={checkIcon} />
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.supportedPricingListItem)}>
@@ -592,7 +592,7 @@ const Pricing = () => {
                                 </div>
                                 <div style={{display:'flex', flexDirection:'row', paddingBottom: 5}}>
                                     <div style={{height: 20, width: 20}}>
-                                        <Image src={checkIcon} />
+                                        <Image alt="checkIcon" src={checkIcon} />
                                     </div>
                                     <div style={{width: 5}}/>
                                     <Text className={cx(classes.supportedPricingListItem)}>
@@ -634,14 +634,16 @@ const Pricing = () => {
                     }
                 </Carousel>
             </div>
-            <div className={cx(classes.hiddenMobileMedium)} style={{height: '400px', width: '100%', paddingTop: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-                <Text sx={{fontSize: '36px',fontFamily: 'vulf-sans-bold', paddingBottom: 25}}>
-                    Feature Breakdown
-                </Text>
-            </div>
-            <div className={cx(classes.hiddenMobileMedium)} style={{height: '400px', width: '100%', paddingTop: 60, paddingBottom: 200, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-                <div style={{width: '80%'}}>
-                    <Image src={desktopFeatureBreakdown}/>
+            <div style={{display:'flex', flexDirection:'column', alignItems: 'center', justifyContent: 'center', paddingTop: 20}}>
+                <div className={cx(classes.hiddenMobileMedium)} style={{height: '400px', width: '100%', paddingTop: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', paddingBottom: 80}}>
+                    <Text sx={{fontSize: '36px',fontFamily: 'vulf-sans-bold', paddingBottom: 25}}>
+                        Feature Breakdown
+                    </Text>
+                </div>
+                <div className={cx(classes.hiddenMobileMedium)} style={{height: '400px', width: '1250px', paddingTop: 60, paddingBottom: 200, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+                    <div style={{width: '80%'}}>
+                        <Image alt="featureBreakdown" src={desktopFeatureBreakdown}/>
+                    </div>
                 </div>
             </div>
             <div style={{height: 200}}/>
