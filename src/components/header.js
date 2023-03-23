@@ -234,7 +234,7 @@ function HeaderAction() {
                     height: 70,
                   }}
                   onClick={()=> {
-                    router.push(process.env.NEXT_PUBLIC_APP_BASE_URL + '/pricing')
+                    router.push('/pricing')
                   }}
                   label={
                     <Text sx={{

@@ -9,6 +9,7 @@ import pricingHeroMobileBanner from '../../public/images/pricing/Pricing-Mobile-
 import desktopFeatureBreakdown from '../../public/images/pricing/Desktop-Feature-Breakdown.svg'
 import closeIcon from '../../public/icons/delete-disabled.svg'
 import checkIcon from '../../public/icons/done-check.3.svg'
+import primaryLockupBlack from '../../public/logos/SVG/Primary Lockup_Black.svg'
 
 const useStyles = createStyles((theme) => ({
 	button: {
@@ -647,7 +648,19 @@ const Pricing = () => {
                 </div>
             </div>
             <div style={{height: 200}}/>
+            	{/* Mobile Footer */}
+            <div className={cx(classes.hiddenDesktop)} style={{height: '80px', width: '100%', backgroundColor:'#F8F6F3', alignItems: 'center', flexDirection:'column', justifyContent:'center', borderTopRightRadius: 50, borderTopLeftRadius: 50}}>
+                <Image src={primaryLockupBlack} alt="Primary Lockup Black" width={100}/>
+                <div style={{height: '10px'}} />
+                <Text sx={{fontFamily:'visuelt-regular', fontSize: '12px'}}>
+                    © 2021 Tandem Inc. All Rights Reserved.
+            </Text>
+            </div>
         </div>
+
+
+             
+			
     )
 }
 

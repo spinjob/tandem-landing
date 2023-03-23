@@ -796,16 +796,15 @@ export default function Home() {
         </div>
 
 		{/* Mobile Footer */}
-		<div className={cx(classes.hiddenDesktop)} style={{height: '380px', width: '100%', backgroundColor: '#9596FF', flexDirection:'column'}}>
              
-                <div style={{height: '18%', width: '100%', backgroundColor:'#B5B6FF', display:'flex', alignItems: 'center', flexDirection:'column', justifyContent:'center', borderTopRightRadius: 90, borderTopLeftRadius: 90}}>
-                        <Image src={primaryLockupBlack} alt="Primary Lockup Black" width={100}/>
-						<div style={{height: '10px'}} />
-                        <Text sx={{fontFamily:'visuelt-regular', fontSize: '12px'}}>
-                            © 2021 Tandem Inc. All Rights Reserved.
-                        </Text>
-                </div>
-        </div>
+			<div className={cx(classes.hiddenDesktop)} style={{height: '80px', width: '100%', backgroundColor:'#B5B6FF', alignItems: 'center', flexDirection:'column', justifyContent:'center', borderTopRightRadius: 50, borderTopLeftRadius: 50}}>
+					<Image src={primaryLockupBlack} alt="Primary Lockup Black" width={100}/>
+					<div style={{height: '10px'}} />
+					<Text sx={{fontFamily:'visuelt-regular', fontSize: '12px'}}>
+						© 2021 Tandem Inc. All Rights Reserved.
+					</Text>
+			</div>
+
     </div>
   )
 }
