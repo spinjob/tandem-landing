@@ -312,7 +312,12 @@ export default function Home() {
 				Get Started
 			</Button>
 			<div style={{ height: '10px' }} />
-			<Button radius="lg" sx={{ width: '90%',  height: '60px',fontFamily: 'visuelt-regular',fontSize: '24px',fontWeight: 400,backgroundColor: 'white',borderRadius: 10,color: 'black',border: '2px solid black',
+			<Button
+				onClick={() => {
+					router.push('/pricing')
+				}
+				}
+			radius="lg" sx={{ width: '90%',  height: '60px',fontFamily: 'visuelt-regular',fontSize: '24px',fontWeight: 400,backgroundColor: 'white',borderRadius: 10,color: 'black',border: '2px solid black',
 				'&:hover': {backgroundColor: '#3E3E3E',color: 'white'}}}>
 				Pricing
 			</Button>
