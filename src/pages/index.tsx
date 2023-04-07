@@ -234,6 +234,7 @@ export default function Home() {
     }, [updateProgress])
 
 	async function processJsonFile (file: any, email: string) {
+		console.log("processing")
 		var temporaryUserId = "temp-"+email+"-"+uuidv4()
 		var temporaryOrganizationId = "temp-organization-"+uuidv4()
 		var updatedFile = {
