@@ -112,10 +112,6 @@ export default function Home() {
 
 	const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
-	mailchimp.setConfig({
-		apiKey: process.env.MAILCHIMP_API_KEY,
-		server: process.env.MAILCHIMP_SERVER_PREFIX,
-	});
 
 	useEffect(() => {
 		if(form.isValid('email') == true && fileJson) {
@@ -204,6 +200,12 @@ export default function Home() {
         })
     }
 
+
+	mailchimp.setConfig({
+		apiKey: process.env.MAILCHIMP_API_KEY,
+		server: process.env.MAILCHIMP_SERVER_PREFIX,
+	});
+
 	async function run() {
 		try {
 		  const response = await mailchimp.ping.get();
@@ -214,7 +216,7 @@ export default function Home() {
 	  }
 	  
 	  run();
-	  
+
 	const updateProgress = (job: any) => {
 		var schemaProgress = job.metadata.schema.status == 'COMPLETED' ? 100 : 0
 		var actionStatus = job.metadata.actions.status == 'COMPLETED' ? 100 : 0
