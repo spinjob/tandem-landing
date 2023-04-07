@@ -96,6 +96,8 @@ export default function Home() {
 	const [fileJson, setFileJson] = useState(null)
 	const [isUploading, setIsUploading] = useState(false)
 	const [uploadProgress, setUploadProgress] = useState(0)
+	const [checkedEmail, setCheckedEmail] = useState(false)
+
 	const router = useRouter()
 
 	const form = useForm({
@@ -112,12 +114,12 @@ export default function Home() {
 
 
 	useEffect(() => {
-		if(form.isValid('email') == true && fileJson) {
+		if(form.isValid('email') == true && fileJson && checkedEmail == true) {
 			setCanValidate(true)
 		} else {
 			setCanValidate(false)
 		}
-		}, [form.isValid('email'), fileJson]
+		}, [form.isValid('email'), fileJson, checkedEmail]
 	)
 
 	const howItWorksData = [
@@ -776,7 +778,7 @@ export default function Home() {
 													</div>
 													<div style={{height: '20px'}} />
 													<div style={{display: 'flex', justifyContent: 'flex-start', width: '100%', paddingLeft: 60}}>
-														<Checkbox color="dark" label="I agree to the terms and conditions" />
+														<Checkbox checked={checkedEmail} onChange={(event) => setCheckedEmail(event.currentTarget.checked)}  color="dark" label={<Text style={{fontFamily:'Visuelt', fontWeight: 100}}>I&apos;m happy to receive occasional emails from Tandem (including these results.)</Text>} />
 													</div>
 												</div>					
 											</div>
@@ -796,7 +798,7 @@ export default function Home() {
                     </Group>
                     <Group>
                         <Text sx={{fontFamily:'visuelt-regular', fontSize: '12px', paddingRight: 70}}>
-                            © 2021 Tandem Inc. All Rights Reserved.
+                            © 2023 InTandem Technologies Inc. All Rights Reserved.
                         </Text>
                     </Group>
                 </div>
@@ -808,7 +810,7 @@ export default function Home() {
 					<Image src={primaryLockupBlack} alt="Primary Lockup Black" width={100}/>
 					<div style={{height: '10px'}} />
 					<Text sx={{fontFamily:'visuelt-regular', fontSize: '12px'}}>
-						© 2021 Tandem Inc. All Rights Reserved.
+						© 2023 InTandem Technologies Inc. All Rights Reserved.
 					</Text>
 			</div>
 
