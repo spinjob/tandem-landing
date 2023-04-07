@@ -38,7 +38,6 @@ import primaryLockupBlack from '../../public/logos/SVG/Primary Lockup_Black.svg'
 import {v4 as uuidv4} from 'uuid';
 
 import axios from 'axios'
-const mailchimp = require("@mailchimp/mailchimp_marketing");
 
 const useStyles = createStyles((theme) => ({
 	button: {
@@ -86,7 +85,6 @@ const useStyles = createStyles((theme) => ({
 		display:'flex'
 	},
   }));
-
 
 
 export default function Home() {
@@ -199,23 +197,6 @@ export default function Home() {
             console.log(err)
         })
     }
-
-
-	mailchimp.setConfig({
-		apiKey: process.env.MAILCHIMP_API_KEY,
-		server: process.env.MAILCHIMP_SERVER_PREFIX,
-	});
-
-	async function run() {
-		try {
-		  const response = await mailchimp.ping.get();
-		  console.log(response);
-		} catch (error) {
-		  console.error(error);
-		}
-	  }
-	  
-	  run();
 
 	const updateProgress = (job: any) => {
 		var schemaProgress = job.metadata.schema.status == 'COMPLETED' ? 100 : 0
