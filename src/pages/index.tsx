@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import ImportApiDropzone from '../components/import-api'
 import Head from 'next/head'
 import HeaderAction from '../components/header'
-import axios from 'axios'
+
 import Footer from '../components/footer'
 import purpleSlider from '../../public/landing-page-purple-slider.svg'
 import {useState, useEffect, useCallback} from 'react'
@@ -36,6 +36,9 @@ import {AiOutlineCheckCircle} from 'react-icons/ai'
 
 import primaryLockupBlack from '../../public/logos/SVG/Primary Lockup_Black.svg'
 import {v4 as uuidv4} from 'uuid';
+
+import axios from 'axios'
+const mailchimp = require("@mailchimp/mailchimp_marketing");
 
 const useStyles = createStyles((theme) => ({
 	button: {
@@ -108,6 +111,11 @@ export default function Home() {
 	});
 
 	const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
+
+	mailchimp.setConfig({
+		apiKey: process.env.MAILCHIMP_API_KEY,
+		server: process.env.MAILCHIMP_SERVER_PREFIX,
+	});
 
 	useEffect(() => {
 		if(form.isValid('email') == true && fileJson) {
@@ -196,6 +204,17 @@ export default function Home() {
         })
     }
 
+	async function run() {
+		try {
+		  const response = await mailchimp.ping.get();
+		  console.log(response);
+		} catch (error) {
+		  console.error(error);
+		}
+	  }
+	  
+	  run();
+	  
 	const updateProgress = (job: any) => {
 		var schemaProgress = job.metadata.schema.status == 'COMPLETED' ? 100 : 0
 		var actionStatus = job.metadata.actions.status == 'COMPLETED' ? 100 : 0

@@ -361,7 +361,7 @@ const Pricing = () => {
                                     Scope
                                 </Text>
                                 <Text sx={{fontFamily:'visuelt-regular', color: '#858585', fontSize:'14px', fontWeight: 500}}>
-                                    $80 / user
+                                    $80 / user / month
                                 </Text>
                             </div>
                         </Card.Section>
@@ -435,14 +435,16 @@ const Pricing = () => {
                             </div>
                         </Card.Section>
                     </Card>
-                    <Card radius={'md'} sx={{border: '1px solid #EBEBEB', opacity: '50%'}}>
+                    <Card radius={'md'} sx={{border: '1px solid #EBEBEB','&:hover':{
+                        border: '1px solid black',
+                    }}}>
                         <Card.Section sx={{height: 90, width: 225, border: '1px solid #EBEBEB', padding: 20}}>
                             <div style={{height: '100%', width: '100%',display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent:'flex-start'}}>
                                 <Text sx={{fontFamily:'visuelt-medium', fontSize:'22px', fontWeight: 600}}>
                                     Validate
                                 </Text>
                                 <Text sx={{fontFamily:'visuelt-regular', color: '#858585', fontSize:'14px', fontWeight: 500}}>
-                                    Coming Soon
+                                    $160 / user / month
                                 </Text>
                             </div>
                         </Card.Section>
@@ -514,12 +516,13 @@ const Pricing = () => {
                             </div>
                             <div style={{height:'100px'}}/>
                             <div style={{display:'flex', flexDirection:'row', paddingBottom: 10}}>
-                                <Button disabled={true} radius="md" sx={{ border: '1px solid black', width: 194, height: 44,  fontFamily: 'visuelt-regular',fontSize: '16px',fontWeight: 400, backgroundColor: 'white', borderRadius: 10,color: 'black',
+                            <Button radius="md" sx={{ border: '1px solid black', width: 194, height: 44,  fontFamily: 'visuelt-regular',fontSize: '16px',fontWeight: 400, backgroundColor: 'white', borderRadius: 10,color: 'black',
                                     '&:hover': {
-                                            backgroundColor: '#3E3E3E',
-                                            color: 'white',
+                                            backgroundColor: '#B4F481',
+                                            color: 'black',
+                                            border: '0px'
                                         }}}>
-                                    Coming Soon
+                                    Get Started
                                 </Button>
                             </div>
                         </Card.Section>
@@ -653,7 +656,7 @@ const Pricing = () => {
                 <Image src={primaryLockupBlack} alt="Primary Lockup Black" width={100}/>
                 <div style={{height: '10px'}} />
                 <Text sx={{fontFamily:'visuelt-regular', fontSize: '12px'}}>
-                    © 2021 Tandem Inc. All Rights Reserved.
+                    © 2023 InTandem Technologies Inc. All Rights Reserved.
             </Text>
             </div>
         </div>
