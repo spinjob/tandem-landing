@@ -137,20 +137,26 @@ export default function Home() {
 		},
 		{
 			'id': 'c',
-			'label': 'Manage team permissions',
-			'content': 'Decide which team members can manage or read your documentation, workflows, settings and data.',
+			'label': 'Validate against documentation',
+			'content': 'Using your API documentation, Tandem validates that the logic and data you’ve defined in your workflows will work as expected when you execute them against your partner APIs.',
 			'link': '/docs'
 		},
+		// {
+		// 	'id': 'c',
+		// 	'label': 'Manage team permissions',
+		// 	'content': 'Decide which team members can manage or read your documentation, workflows, settings and data.',
+		// 	'link': '/docs'
+		// },
 		{
 			'id': 'd',
 			'label': 'Completely customizable',
-			'content': 'Set and manage partnership- and customer-specific configurations for your workflows to use during Schema Mapping or API request execution.',
+			'content': 'Set and manage partnership-specific configurations for your workflows to use during Schema Mapping or API request execution.',
 			'link': '/docs'
 		},
 		{
 			'id': 'e',
 			'label': 'Generate awesome documentation',
-			'content': 'Quickly generate integration requirement documentation and standard operating procedures in a clean, intuitive format.',
+			'content': 'Quickly generate integration requirement documentation using your designed workflow logic in a clean, intuitive format.',
 			'link': '/docs'
 		}
 	]
@@ -285,12 +291,15 @@ export default function Home() {
 				Turn your partnership API documentation into a simple, powerful, no-code workspace.
 			</Text>
 			<div style={{height: '40px'}}/>
-			<Button radius="lg"  sx={{ width: '221px', height: '76px',fontFamily: 'visuelt-regular',fontSize: '24px',fontWeight: 400,backgroundColor: 'black',color: 'white',
+			<Button          component="a"
+				target="_blank"
+				rel="noopener noreferrer"
+				href="https://calendly.com/spencer-tandem/tandem-demo" radius="lg"  sx={{ width: '221px', height: '76px',fontFamily: 'visuelt-regular',fontSize: '24px',fontWeight: 400,backgroundColor: 'black',color: 'white',
 					'&:hover': {
 						backgroundColor: '#3E3E3E',
 						color: 'white',
 					}}}>
-				Get Started
+				Book a Demo
 			</Button>
 		</div>
 
@@ -309,7 +318,9 @@ export default function Home() {
 				Turn your partnership API documentation into a simple, powerful, no-code workspace.
 			</Text>
 			<div style={{ height: '40px' }} />
-			<Button radius="lg"  sx={{ width: '90%',  height: '60px',fontFamily: 'visuelt-regular',fontSize: '24px',fontWeight: 400,backgroundColor: 'black',borderRadius: 10,color: 'white',
+			<Button onClick={()=>{
+				router.push("https://calendly.com/spencer-tandem/tandem-demo")
+			}} radius="lg"  sx={{ width: '90%',  height: '60px',fontFamily: 'visuelt-regular',fontSize: '24px',fontWeight: 400,backgroundColor: 'black',borderRadius: 10,color: 'white',
 				'&:hover': {
 						backgroundColor: '#3E3E3E',
 						color: 'white',
@@ -663,7 +674,7 @@ export default function Home() {
 				</Text>
 				<div style={{height: '60px'}} />
 				<Text sx={{ fontFamily: 'visuelt-regular', fontSize: '18px', width: '650px', textAlign: 'left', alignItems: 'center',lineHeight: '32px'}} >
-					Tandem supports both partnership- and customer-specific configurations and settings, so you can manipulate or set values in your workflows at the level that you need to.
+					Tandem supports both partnership- and workflow-specific configurations and settings, so you can manipulate or set values in your workflows at the level that you need to.
 				</Text>
 			</div>
 		</div>
@@ -682,7 +693,7 @@ export default function Home() {
 						managing the details
 					</Text>
 				<Text sx={{ fontFamily: 'visuelt-regular', fontSize: '14px',  textAlign: 'left', alignItems: 'center',lineHeight: '32px'}} >
-					Tandem supports both partnership- and customer-specific configurations and settings, so you can manipulate or set values in your workflows at the level that you need to.
+					Tandem supports partnership- and workflow-specific configurations and settings, so you can manipulate or set values in your workflows at the level that you need to.
 				</Text>
 			</div>
 		</div>
@@ -706,7 +717,7 @@ export default function Home() {
 								</Text>
 							</Badge>
 						</div>
-                        <Anchor underline color={'dark'} sx={{fontFamily:'visuelt-regular'}}>
+                        <Anchor href='https://blog.readme.com/how-to-generate-openapi-descriptions/' underline color={'dark'} sx={{fontFamily:'visuelt-regular'}}>
                             How do I get an API Spec?
                         </Anchor>
                     </div>

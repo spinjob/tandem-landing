@@ -77,12 +77,12 @@ function HeaderAction() {
                   fontWeight: 500,
                   fontSize: 16,
                   color: '#000000',
-                  marginRight: 20,
+                  marginRight: 140,
               }}>
                   PRICING
               </Text>
             </Anchor>
-            <Anchor>
+            {/* <Anchor>
               <Text sx={{
                   fontFamily: 'Visuelt',
                   fontWeight: 100,
@@ -92,7 +92,7 @@ function HeaderAction() {
               }}>
                   ABOUT
               </Text>
-            </Anchor>
+            </Anchor> */}
           </Group>
           <Group 
             sx={{
@@ -132,9 +132,11 @@ function HeaderAction() {
                   SIGN IN
               </Text>
             </Anchor>
-            <Button radius={'sm'} sx={{ 
+            <Button onClick={()=>{
+				router.push("https://calendly.com/spencer-tandem/tandem-demo")
+			}}  radius={'sm'} sx={{ 
               height: 34,
-              width: 120,
+              width: 150,
               backgroundColor: '#000000',
               color: '#FFFFFF',
               fontFamily: 'Visuelt',
@@ -146,7 +148,7 @@ function HeaderAction() {
               }
 
             }}>
-              Get Started
+              BOOK A DEMO
             </Button>
           </Group>
           <Group
@@ -248,7 +250,7 @@ function HeaderAction() {
                   </Text>
                   }
                 />  
-                <div style={{height: 10}}/>
+                {/* <div style={{height: 10}}/>
                 <NavLink
                   sx={{
                     '&:hover': {
@@ -268,8 +270,8 @@ function HeaderAction() {
                       Features
                   </Text>
                   }
-                />  
-                <div style={{height: 10}}/>
+                />   */}
+                {/* <div style={{height: 10}}/>
                 <NavLink
                   sx={{
                     '&:hover': {
@@ -289,7 +291,7 @@ function HeaderAction() {
                       About
                   </Text>
                   }
-                />  
+                />   */}
             </div>
            
           </Drawer>

@@ -10,6 +10,7 @@ import desktopFeatureBreakdown from '../../public/images/pricing/Desktop-Feature
 import closeIcon from '../../public/icons/delete-disabled.svg'
 import checkIcon from '../../public/icons/done-check.3.svg'
 import primaryLockupBlack from '../../public/logos/SVG/Primary Lockup_Black.svg'
+import { useRouter } from 'next/router';
 
 const useStyles = createStyles((theme) => ({
 	button: {
@@ -72,6 +73,7 @@ const useStyles = createStyles((theme) => ({
 const Pricing = () => {
 	const { classes, cx, theme } = useStyles();
     const [activePricingCard, setActivePricingCard] = useState('a')
+    const router = useRouter();
     
     const pricingData = [{
         id:'a',
@@ -231,12 +233,12 @@ const Pricing = () => {
                         Have an API spec ready to go? Get started with Tandem right away.  Looking for extra help or have questions about solutions or roadmaps? Book a time to chat.
                     </Text>
                     <div style={{height: '40px'}}/>
-                    <Button radius="lg"  sx={{ width: '221px', height: '76px',fontFamily: 'visuelt-regular',fontSize: '24px',fontWeight: 400,backgroundColor: 'black',color: 'white',
+                    <Button onClick={()=>{router.push("https://calendly.com/spencer-tandem/tandem-demo")}} radius="lg"  sx={{ width: '221px', height: '76px',fontFamily: 'visuelt-regular',fontSize: '24px',fontWeight: 400,backgroundColor: 'black',color: 'white',
                             '&:hover': {
                                 backgroundColor: '#3E3E3E',
                                 color: 'white',
                             }}}>
-                        Get Started
+                        Book a Demo
                     </Button>
                 </div>
 
@@ -250,12 +252,12 @@ const Pricing = () => {
                         Have an API spec ready to go? Get started with Tandem right away.  Looking for extra help or have questions about solutions or roadmaps? Book a time to chat.
                     </Text>
                     <div style={{ height: '40px' }} />
-                    <Button radius="lg"  sx={{ width: '80%',  height: '60px',fontFamily: 'visuelt-regular',fontSize: '24px',fontWeight: 400,backgroundColor: 'black',borderRadius: 10,color: 'white',
+                    <Button radius="lg" onClick={()=>{ router.push("https://calendly.com/spencer-tandem/tandem-demo")}} sx={{ width: '80%',  height: '60px',fontFamily: 'visuelt-regular',fontSize: '24px',fontWeight: 400,backgroundColor: 'black',borderRadius: 10,color: 'white',
                         '&:hover': {
                                 backgroundColor: '#3E3E3E',
                                 color: 'white',
                             }}}>
-                        Get Started
+                        Book a Demo
                     </Button>
                 </div>
                 <div className={cx(classes.hiddenMobileMedium)} style={{ flexDirection: 'row', width:'30%', height: '100%', paddingTop: 70,  alignItems:'flex-start', boxSizing: 'border-box',overflow: 'hidden'}}>
