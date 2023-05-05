@@ -343,7 +343,7 @@ const Pricing = () => {
                             </div>
                             <div style={{height:'100px'}}/>
                             <div style={{display:'flex', flexDirection:'row', paddingBottom: 10}}>
-                                <Button radius="md" sx={{ border: '1px solid black', width: 194, height: 44,  fontFamily: 'visuelt-regular',fontSize: '16px',fontWeight: 400, backgroundColor: 'white', borderRadius: 10,color: 'black',
+                                <Button onClick={()=>{router.push("https://calendly.com/spencer-tandem/tandem-demo")}} radius="md" sx={{ border: '1px solid black', width: 194, height: 44,  fontFamily: 'visuelt-regular',fontSize: '16px',fontWeight: 400, backgroundColor: 'white', borderRadius: 10,color: 'black',
                                     '&:hover': {
                                             backgroundColor: '#B4F481',
                                             color: 'black',
@@ -426,7 +426,7 @@ const Pricing = () => {
                             </div>
                             <div style={{height:'100px'}}/>
                             <div style={{display:'flex', flexDirection:'row', paddingBottom: 10}}>
-                            <Button radius="md" sx={{ border: '1px solid black', width: 194, height: 44,  fontFamily: 'visuelt-regular',fontSize: '16px',fontWeight: 400, backgroundColor: 'white', borderRadius: 10,color: 'black',
+                            <Button onClick={()=>{router.push("https://calendly.com/spencer-tandem/tandem-demo")}} radius="md" sx={{ border: '1px solid black', width: 194, height: 44,  fontFamily: 'visuelt-regular',fontSize: '16px',fontWeight: 400, backgroundColor: 'white', borderRadius: 10,color: 'black',
                                     '&:hover': {
                                             backgroundColor: '#B4F481',
                                             color: 'black',
@@ -518,7 +518,7 @@ const Pricing = () => {
                             </div>
                             <div style={{height:'100px'}}/>
                             <div style={{display:'flex', flexDirection:'row', paddingBottom: 10}}>
-                            <Button radius="md" sx={{ border: '1px solid black', width: 194, height: 44,  fontFamily: 'visuelt-regular',fontSize: '16px',fontWeight: 400, backgroundColor: 'white', borderRadius: 10,color: 'black',
+                            <Button onClick={()=>{router.push("https://calendly.com/spencer-tandem/tandem-demo")}} radius="md" sx={{ border: '1px solid black', width: 194, height: 44,  fontFamily: 'visuelt-regular',fontSize: '16px',fontWeight: 400, backgroundColor: 'white', borderRadius: 10,color: 'black',
                                     '&:hover': {
                                             backgroundColor: '#B4F481',
                                             color: 'black',
