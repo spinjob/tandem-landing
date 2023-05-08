@@ -51,11 +51,11 @@ const PrivacyPolicy = () => {
                       InTandem Technologies Inc.
                       <bdt className="block-component" />
                     </bdt>{" "}
-                    (&lt;bdt className=&quot;block-component&quot; /&gt;&quot;&lt;strong&gt;Company&lt;/strong&gt;&quot;,&quot;&lt;strong&gt;we&lt;/strong&gt;,&quot; &quot;&lt;strong&gt;us&lt;/strong&gt;,&quot; or &quot;&lt;strong&gt;our&lt;/strong&gt;&quot;&lt;bdt className=&quot;statement-end-if-in-editor&quot; /&gt;)
+                    <bdt className="block-component" /><strong>Company</strong>,&quot;<strong>we</strong>&quot;,&quot; <strong>us</strong>, or &quot;<strong>our</strong>&quot;<bdt className="statement-end-if-in-editor" />
                   </span>
                   <span data-custom-class="body_text">
                     , describes how and why we might collect, store, use, and/or share
-                    (&lt;bdt className=&quot;block-component&quot; /&gt;&quot;&lt;strong&gt;process&lt;/strong&gt;&quot;&lt;bdt className=&quot;statement-end-if-in-editor&quot; /&gt;) your information when you use our services (&lt;bdt className=&quot;block-component&quot; /&gt;&quot;&lt;strong&gt;Services&lt;/strong&gt;&quot;&lt;bdt className=&quot;statement-end-if-in-editor&quot; /&gt;), such as when you:
+                    (<bdt className="block-component" /><strong>process</strong><bdt className="statement-end-if-in-editor" />) your information when you use our services (<bdt className="block-component" /><strong>Services</strong><bdt className="statement-end-if-in-editor" />), such as when you:
                   </span>
                 </span>
               </span>
@@ -64,7 +64,7 @@ const PrivacyPolicy = () => {
                   <span data-custom-class="body_text">
                     <span style={{ color: "rgb(89, 89, 89)" }}>
                       <span data-custom-class="body_text">
-                        &lt;bdt className=&quot;block-component&quot; /&gt;
+                      <bdt className="block-component" /> 
                       </span>
                     </span>
                   </span>
@@ -1227,8 +1227,8 @@ const PrivacyPolicy = () => {
                       media account details, like your Facebook, Twitter, or other
                       social media account. If you choose to register in this way, we
                       will collect the information described in the section called{" "}
-                      &lt;bdt className=&quot;block-component&quot; /&gt;&quot;
-                      &lt;bdt className=&quot;statement-end-if-in-editor&quot; /&gt;
+                      <bdt className="block-component" />
+                      <bdt className="statement-end-if-in-editor" />
                       <span style={{ fontSize: 15 }}>
                         <span data-custom-class="body_text">
                           <span style={{ fontSize: 15 }}>
@@ -1240,8 +1240,8 @@ const PrivacyPolicy = () => {
                           </span>
                         </span>
                       </span>
-                      &lt;bdt className=&quot;block-component&quot; /&gt;&quot;
-                      &lt;bdt className=&quot;statement-end-if-in-editor&quot; /&gt; below.
+                      <bdt className="block-component" />
+                      <bdt className="statement-end-if-in-editor" /> below.
                     </span>
                   </span>
                 </span>
@@ -1418,13 +1418,15 @@ const PrivacyPolicy = () => {
                         date/time stamps associated with your usage, pages and files
                         viewed, searches, and other actions you take such as which
                         features you use), device event information (such as system
-                        activity, error reports (sometimes called &lt;bdt className=&quot;block-component&quot; /&gt;&quot;crash dumps&quot;&lt;bdt className=&quot;statement-end-if-in-editor&quot; /&gt;), and hardware settings).
+                        activity, error reports (sometimes called 
+                          <bdt className="block-component" />
+                          &quot;crash dumps&quot;<bdt className="statement-end-if-in-editor" />), and hardware settings).
                         <span style={{ fontSize: 15 }}>
                           <span style={{ color: "rgb(89, 89, 89)" }}>
                             <span data-custom-class="body_text">
                               <span style={{ fontSize: 15 }}>
                                 <span style={{ color: "rgb(89, 89, 89)" }}>
-                                  &lt;bdt className=&quot;statement-end-if-in-editor&quot; /&gt;
+                                <bdt className="statement-end-if-in-editor" />
                                 </span>
                               </span>
                             </span>
@@ -1469,7 +1471,7 @@ const PrivacyPolicy = () => {
                               <span data-custom-class="body_text">
                                 <span style={{ fontSize: 15 }}>
                                   <span style={{ color: "rgb(89, 89, 89)" }}>
-                                    &lt;bdt className=&quot;statement-end-if-in-editor&quot; /&gt;
+                                  <bdt className="statement-end-if-in-editor" />
                                   </span>
                                 </span>
                               </span>
