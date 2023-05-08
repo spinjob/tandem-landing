@@ -808,10 +808,13 @@ export default function Home() {
                     <Group sx={{paddingLeft: 70}}>
                         <Image src={primaryLockupBlack} alt="Primary Lockup Black" width={150}/>
                     </Group>
-                    <Group>
+                    <Group sx={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
                         <Text sx={{fontFamily:'visuelt-regular', fontSize: '12px', paddingRight: 70}}>
                             © 2023 InTandem Technologies Inc. All Rights Reserved.
                         </Text>
+						<Anchor href='/privacy' sx={{fontFamily:'visuelt-regular', fontSize: '12px', paddingRight: 70}}>
+                            Privacy Policy
+                        </Anchor>
                     </Group>
                 </div>
         </div>
@@ -824,6 +827,9 @@ export default function Home() {
 					<Text sx={{fontFamily:'visuelt-regular', fontSize: '12px'}}>
 						© 2023 InTandem Technologies Inc. All Rights Reserved.
 					</Text>
+					<Text sx={{fontFamily:'visuelt-regular', fontSize: '12px', paddingRight: 70}}>
+                            Privacy Policy
+                    </Text>
 			</div>
 
     </div>
