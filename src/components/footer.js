@@ -52,9 +52,6 @@ const Footer = () => {
                         <Text sx={{fontFamily:'visuelt-regular', fontSize: '12px', paddingRight: 70}}>
                             © 2021 Tandem Inc. All Rights Reserved.
                         </Text>
-                        <Text sx={{fontFamily:'visuelt-regular', fontSize: '12px', paddingRight: 70}}>
-                            Privacy Policy
-                        </Text>
                     </Group>
                 </div>
             </div>

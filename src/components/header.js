@@ -77,12 +77,12 @@ function HeaderAction() {
                   fontWeight: 500,
                   fontSize: 16,
                   color: '#000000',
-                  marginRight: 140,
+                  marginRight: 20
               }}>
                   PRICING
               </Text>
             </Anchor>
-            {/* <Anchor>
+            <Anchor href={'/solutions'}>
               <Text sx={{
                   fontFamily: 'Visuelt',
                   fontWeight: 100,
@@ -90,9 +90,9 @@ function HeaderAction() {
                   color: '#000000',
                   marginRight: 20,
               }}>
-                  ABOUT
+                  SOLUTIONS
               </Text>
-            </Anchor> */}
+            </Anchor>
           </Group>
           <Group 
             sx={{
@@ -250,7 +250,7 @@ function HeaderAction() {
                   </Text>
                   }
                 />  
-                {/* <div style={{height: 10}}/>
+                <div style={{height: 10}}/>
                 <NavLink
                   sx={{
                     '&:hover': {
@@ -258,6 +258,9 @@ function HeaderAction() {
                     },
                     borderRadius: 20,
                     height: 70,
+                  }}
+                  onClick={()=> {
+                    router.push('/solutions')
                   }}
                   label={
                     <Text sx={{
@@ -267,10 +270,10 @@ function HeaderAction() {
                       color: '#000000',
                      
                   }}>
-                      Features
+                      Solutions
                   </Text>
                   }
-                />   */}
+                />  
                 {/* <div style={{height: 10}}/>
                 <NavLink
                   sx={{
