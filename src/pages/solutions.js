@@ -148,7 +148,7 @@ const Solutions = () => {
                     <div style={{width: '25%'}}/>
                     <div style={{display: 'flex', padding: 30, flexDirection:'row', width:'40%', backgroundColor: 'white', border: '1px solid black', borderRadius:10}}>
                             {
-                                hasWindow && <ReactPlayer url="https://youtu.be/hKj4adzGryc"/>
+                                hasWindow && <ReactPlayer url="https://youtu.be/iX8OiTsvBbU"/>
                             }
                     </div>
                     <div style={{width: '5%'}}/>
@@ -275,7 +275,7 @@ const Solutions = () => {
                     <div style={{height: '20px'}}/>
                     <div style={{display: 'flex', padding: 30, flexDirection:'row', width:'100%', backgroundColor: 'white', border: '1px solid black', borderRadius:10}}>
                             {
-                                hasWindow && <ReactPlayer url="https://youtu.be/hKj4adzGryc"/>
+                                hasWindow && <ReactPlayer url="https://youtu.be/iX8OiTsvBbU"/>
                             }
                     </div>
                 </div>
