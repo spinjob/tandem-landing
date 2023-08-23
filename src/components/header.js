@@ -71,7 +71,7 @@ function HeaderAction() {
         <div className={classes.inner} style={{ display:'flex'}}>
           <Group
             className={classes.links}>
-            <Anchor href={'/pricing'}>
+            {/* <Anchor href={'/pricing'}>
               <Text sx={{
                   fontFamily: 'Visuelt',
                   fontWeight: 500,
@@ -81,7 +81,7 @@ function HeaderAction() {
               }}>
                   PRICING
               </Text>
-            </Anchor>
+            </Anchor> */}
             <Anchor href={'/solutions'}>
               <Text sx={{
                   fontFamily: 'Visuelt',
@@ -90,7 +90,7 @@ function HeaderAction() {
                   color: '#000000',
                   marginRight: 20,
               }}>
-                  SOLUTIONS
+                  ALPHA SOLUTIONS
               </Text>
             </Anchor>
           </Group>
@@ -119,7 +119,7 @@ function HeaderAction() {
           </Group>
           <Group
            className={classes.links}>
-            <Anchor
+            {/* <Anchor
               href={process.env.NEXT_PUBLIC_APP_BASE_URL + '/api/auth/login'}
             >
               <Text sx={{
@@ -131,7 +131,7 @@ function HeaderAction() {
               }}>
                   SIGN IN
               </Text>
-            </Anchor>
+            </Anchor> */}
             <Button onClick={()=>{
 				router.push("https://calendly.com/spencer-tandem/tandem-demo")
 			}}  radius={'sm'} sx={{ 
@@ -148,7 +148,7 @@ function HeaderAction() {
               }
 
             }}>
-              BOOK A DEMO
+              CHAT WITH US
             </Button>
           </Group>
           <Group
@@ -202,7 +202,7 @@ function HeaderAction() {
                 paddingRight: 30
               }}
             >
-                <NavLink
+                {/* <NavLink
                   sx={{
                     '&:hover': {
                       backgroundColor: 'white',
@@ -225,9 +225,9 @@ function HeaderAction() {
                       Sign Up
                   </Text>
                   }
-                />  
+                />   */}
                 <div style={{height: 10}}/>
-                <NavLink
+                {/* <NavLink
                   sx={{
                     '&:hover': {
                       backgroundColor: 'white',
@@ -249,7 +249,7 @@ function HeaderAction() {
                       Pricing
                   </Text>
                   }
-                />  
+                />   */}
                 <div style={{height: 10}}/>
                 <NavLink
                   sx={{
@@ -270,7 +270,7 @@ function HeaderAction() {
                       color: '#000000',
                      
                   }}>
-                      Solutions
+                      Alpha Solutions
                   </Text>
                   }
                 />  
